@@ -1,0 +1,12 @@
+addi x1, x0,1000
+sw x1,100(x0)
+sb x1,104(x0)
+sh x1,108(x0)
+add x0,x0,x0
+add x0,x0,x0
+lw x2,100(x0)
+lb x3, 104(x0)
+lh x4,108(x0)
+lbu x5, 100(x0)
+lhu x6, 100(x0)
+

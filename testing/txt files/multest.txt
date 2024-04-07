@@ -1,0 +1,13 @@
+addi x1, x0, 2000 
+addi x2, x0, 27
+
+# RV32M Multiply Instructions
+mul x3, x1, x2
+mulh x4, x1, x2 
+mulhsu x5, x1, x2
+mulhu x6, x1, x2 
+div x7, x1, x2 # Divide x1 by x2 and store the quotient in x7
+divu x8, x1, x2 # Divide x1 by x2 and store the quotient in x8, treating both x1 and x2 as unsigned
+rem x9, x1, x2 # Divide x1 by x2 and store the remainder in x9
+remu x10, x1, x2 # Divide x1 by x2 and store the remainder in x10, treating both x1 and x2 as unsigned
+

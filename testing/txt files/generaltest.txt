@@ -1,0 +1,73 @@
+addi x1, x0, 1      # ADDI
+  addi x2, x0, 2      # ADDI
+  add  x3, x1, x2     # ADD
+  sub  x4, x3, x2     # SUB
+  sll  x5, x3, x2     # SLL
+  slt  x6, x3, x2     # SLT
+  sltu x7, x3, x2     # SLTU
+  xor  x8, x3, x2     # XOR
+  srl  x9, x3, x2     # SRL
+  sra  x10, x3, x2    # SRA
+  or   x11, x3, x2    # OR
+  and  x12, x3, x2    # AND
+  lui  x13, 123       # LUI
+  auipc x14, 123      # AUIPC
+  addi x3, x0,1000
+  sb   x3, 200(x0)      # SB
+  sh   x3, 204(x0)      # SH
+  sw   x3, 208(x0)      # SW
+  lb   x15, 200(x0)     # LB
+  lh   x16, 204(x0)     # LH
+  lw   x17, 208(x0)     # LW
+  lbu  x18, 208(x0)     # LBU
+  lhu  x19, 208(x0)     # LHU
+
+  beq  x1, x2, label1 # BEQ
+  bne  x1, x2, label2 # BNE
+  blt  x1, x2, label3 # BLT
+  bge  x1, x2, label4 # BGE
+  bltu x1, x2, label5 # BLTU
+  bgeu x1, x2, label6 # BGEU
+
+  # Exit the program
+  addi x10, x0, 93    # SYS_exit
+  ecall
+
+label1:
+  # Do something
+  addi x11, x0, 0
+
+label2:
+  # Do something else
+  addi x12, x0, 0
+  jal x13, label8
+
+label3:
+  # Do something different
+  addi x14, x0, 0
+  beq x1, x2, label8
+
+label4:
+  # Do yet another thing
+  addi x15, x0, 0
+  bne x1, x2, label8
+
+label5:
+  # Do something else again
+  addi x16, x0, 0
+  blt x1, x2, label8
+
+label6:
+  # Do one last thing
+  addi x17, x0, 0
+  bge x1, x2, label8
+
+label7:
+  # Do something with JAL
+  addi x18, x0, 42
+  jalr x19, x0, 0
+
+label8:
+  # Done
+  addi x20, x0, 0
+

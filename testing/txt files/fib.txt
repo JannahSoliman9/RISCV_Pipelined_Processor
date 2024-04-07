@@ -1,0 +1,13 @@
+addi x1, x0, 0 # F[0]
+addi x2, x0, 1 # F[1]
+addi x3, x0, 2 # Counter
+addi x4, x0, 20 # Maximum count
+
+
+loop:
+add x5, x1, x2   # F[n] = F[n-1] + F[n-2]
+addi x3, x3, 1   # Increment counter
+addi x1, x2, 0   # F[n-2] = F[n-1]
+addi x2, x5, 0   # F[n-1] = F[n]
+blt x3, x4, loop # Repeat until maximum count is reached
+

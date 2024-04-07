@@ -1,0 +1,5 @@
+Addi x1, x0, 5 
+Addi x2, x0,10
+Add x3, x1,x2
+Sub x4, x2,x1 
+
